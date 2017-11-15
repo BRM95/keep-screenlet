@@ -11,7 +11,7 @@ def Login(driver):
     try:
         wait = WebDriverWait(driver, 10)
         element = driver.find_element_by_xpath("//*[@type='email']");
-        element.send_keys("brmusani@gmail.com");
+        element.send_keys("username");
         try:
             driver.find_element_by_id("identifierNext");
             button =  wait.until(EC.element_to_be_clickable((By.ID, "identifierNext")))
@@ -25,7 +25,7 @@ def Login(driver):
         finally:
             time.sleep(2);
             element = driver.find_element_by_xpath("//*[@type='password']");
-            element.send_keys("bilalmusani81495");
+            element.send_keys("password");
             driver.execute_script("arguments[0].click();", button);
             return driver;
     except TimeoutException:
